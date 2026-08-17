@@ -98,27 +98,18 @@ php -m | grep sqlite
 下载最新 Release 包，解压到你的网站目录：
 
 ```bash
-wget https://github.com/yourname/php-rate-limit/archive/refs/tags/v1.0.0.zip
-unzip v1.0.0.zip
-mv php-rate-limit-1.0.0 rate-limit
+wget https://github.com/bunian/rate-limit/archive/refs/tags/down.zip
+unzip down.zip
+mv down rate-limit
 ```
 
 ### 方式二：Git 克隆
 
 ```bash
 cd /path/to/your/project
-git clone https://github.com/yourname/php-rate-limit.git rate-limit
+git clone https://github.com/bunian/rate-limit.git rate-limit
 ```
 
-### 方式三：Composer（可选）
-
-```json
-{
-  "require": {
-    "yourname/php-rate-limit": "^1.0"
-  }
-}
-```
 
 ### 目录权限
 
@@ -361,28 +352,28 @@ auto_prepend_file = /var/www/html/rate-limit/rate_limit.php
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│                    业务 PHP 文件                          │
-│         require_once 'rate-limit/rate_limit.php'         │
+│                    业务 PHP 文件                        │
+│         require_once 'rate-limit/rate_limit.php'        │
 └──────────────────────────┬──────────────────────────────┘
                            │
                            ▼
 ┌─────────────────────────────────────────────────────────┐
-│                    Guard 调度器                           │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌─────────┐ │
-│  │ Visitor  │→│Blacklist │→│RateLimit │→│  Queue  │ │
-│  │ 访客识别  │  │ 黑白名单  │  │ 令牌桶   │  │ 排队管理 │ │
-│  └──────────┘  └──────────┘  └──────────┘  └─────────┘ │
-│                           │                              │
-│                    ┌──────┴──────┐                       │
-│                    │   Logger    │                       │
-│                    │  事件日志    │                       │
-│                    └─────────────┘                       │
+│                    Guard 调度器                         │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌─────────┐  │
+│  │ Visitor  │→ │Blacklist │→ │RateLimit │→ │  Queue  │  │
+│  │ 访客识别  │  │ 黑白名单 │  │ 令牌桶    │  │排队管理 │  │
+│  └──────────┘  └──────────┘  └──────────┘  └─────────┘  │
+│                           │                             │
+│                    ┌──────┴──────┐                      │
+│                    │   Logger    │                      │
+│                    │  事件日志    │                      │
+│                    └─────────────┘                      │
 └──────────────────────────┬──────────────────────────────┘
                            │
                            ▼
 ┌─────────────────────────────────────────────────────────┐
-│              SQLite (PDO) 数据存储                        │
-│  visitors │ queue │ config │ blacklist │ logs            │
+│              SQLite (PDO) 数据存储                       │
+│  visitors │ queue │ config │ blacklist │ logs           │
 └─────────────────────────────────────────────────────────┘
 ```
 
