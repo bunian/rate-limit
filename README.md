@@ -848,41 +848,6 @@ Admin (后台)
 
 ---
 
-## 贡献指南
-
-欢迎提交 Issue 和 Pull Request！
-
-### 开发环境搭建
-
-```bash
-# 克隆仓库
-git clone https://github.com/yourname/php-rate-limit.git
-cd php-rate-limit
-
-# 启动本地 PHP 开发服务器
-php -S localhost:8080
-
-# 访问测试
-# http://localhost:8080/test.php
-# http://localhost:8080/admin/
-```
-
-### 代码规范
-
-- 遵循 [PSR-12](https://www.php-fig.org/psr/psr-12/) 编码规范
-- PHP 7.4 语法，不使用 PHP 8.x 独有特性
-- 类名使用 PascalCase，方法名使用 camelCase
-- 所有公共方法必须有类型声明（参数和返回值）
-- 提交前确保无语法错误：`find . -name "*.php" -exec php -l {} \;`
-
-### 提交 PR 流程
-
-1. Fork 本仓库
-2. 创建特性分支：`git checkout -b feature/your-feature`
-3. 提交更改：`git commit -m 'Add some feature'`
-4. 推送分支：`git push origin feature/your-feature`
-5. 提交 Pull Request
-
 ### 待实现功能（Roadmap）
 
 - [ ] Redis 存储驱动支持
@@ -907,35 +872,6 @@ php -S localhost:8080
 - ✅ 访客指纹识别（IP + UA + Cookie）
 - ✅ API 模式（JSON 响应）
 - ✅ 接口级隔离（RL_ACTION 常量）
-
----
-
-## License
-
-[MIT License](LICENSE) © 2026
-
-```
-MIT License
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
 ---
 
 <div align="center">
